@@ -1,0 +1,670 @@
+<map version="1.0.1">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1561975814002" ID="ID_725989871" MODIFIED="1574774661050" TEXT="PMS">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      core: Core service responsible for authentication/authorization and project core functionalities&#160;&#160;&#160;- Rushikesh
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      nt: Notification service responsible for sending email/sms alerts&#160;&#160;&#160;- Rushikesh<br /><br />md: Media service responsible for managing project media (e.g. plans, contracts, )&#160;&#160;- Rahul
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      bd: Board service responsible for managing project tasks&#160;&#160;- Shashikant<br /><br />pc: Procurement+ cost control service&#160;&#160;- Mugdha<br />
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      mn: Monitoring service
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      dashboard: Service responsible for dashboard components like charts/weather api integration<br />
+    </p>
+  </body>
+</html>
+</richcontent>
+<hook NAME="MapStyle">
+<properties SHOW_NOTE_ICONS="true"/>
+<map_styles>
+<stylenode LOCALIZED_TEXT="styles.root_node">
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right">
+<stylenode COLOR="#000000" LOCALIZED_TEXT="default" MAX_WIDTH="600" STYLE="as_parent">
+<font/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.note"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.floating">
+<edge/>
+<cloud/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right">
+<stylenode COLOR="#18898b" LOCALIZED_TEXT="styles.topic" STYLE="fork">
+<font/>
+</stylenode>
+<stylenode COLOR="#cc3300" LOCALIZED_TEXT="styles.subtopic" STYLE="fork">
+<font/>
+</stylenode>
+<stylenode COLOR="#669900" LOCALIZED_TEXT="styles.subsubtopic">
+<font/>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.important">
+<icon/>
+</stylenode>
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right">
+<stylenode COLOR="#000000" LOCALIZED_TEXT="AutomaticLayout.level.root">
+<font/>
+</stylenode>
+<stylenode COLOR="#0033ff" LOCALIZED_TEXT="AutomaticLayout.level,1">
+<font/>
+</stylenode>
+<stylenode COLOR="#00b439" LOCALIZED_TEXT="AutomaticLayout.level,2">
+<font/>
+</stylenode>
+<stylenode COLOR="#990000" LOCALIZED_TEXT="AutomaticLayout.level,3">
+<font/>
+</stylenode>
+<stylenode COLOR="#111111" LOCALIZED_TEXT="AutomaticLayout.level,4">
+<font/>
+</stylenode>
+</stylenode>
+</stylenode>
+</map_styles>
+</hook>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1561975824841" FOLDED="true" HGAP="26" ID="ID_1626732120" MODIFIED="1574773288217" POSITION="left" TEXT="core_user" VSHIFT="966">
+<node CREATED="1561975908377" ID="ID_142170970" MODIFIED="1570692626898" TEXT="id: int, ai, pk">
+<linktarget COLOR="#000000" DESTINATION="ID_142170970" ENDARROW="Default" ENDINCLINATION="145;0;" ID="Arrow_ID_1875123173" SOURCE="ID_573037454" STARTARROW="None" STARTINCLINATION="145;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_142170970" ENDARROW="Default" ENDINCLINATION="436;0;" ID="Arrow_ID_366254211" SOURCE="ID_103388451" STARTARROW="None" STARTINCLINATION="436;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_142170970" ENDARROW="Default" ENDINCLINATION="332;0;" ID="Arrow_ID_1339776964" SOURCE="ID_1915627098" STARTARROW="None" STARTINCLINATION="332;0;"/>
+</node>
+<node CREATED="1561975917486" ID="ID_133262920" MODIFIED="1561976005872" TEXT="email: varchar(48), not null unique"/>
+<node CREATED="1561975932232" ID="ID_1390536078" MODIFIED="1570692147698" TEXT="profile_pic: ImageField, null"/>
+<node CREATED="1561975985616" ID="ID_1576019341" MODIFIED="1561976000566" TEXT="first_name: varchar(48), null"/>
+<node CREATED="1561976018672" ID="ID_405917717" MODIFIED="1561976027137" TEXT="last_name: varchar(48), null"/>
+<node CREATED="1561976037186" ID="ID_1118269850" MODIFIED="1561976045128" TEXT="is_active: boolean, default false"/>
+<node CREATED="1563184248775" ID="ID_1634742161" MODIFIED="1570709329651" TEXT="address: varchar(255), null"/>
+<node CREATED="1570692036812" ID="ID_1080688181" MODIFIED="1570692055201" TEXT="contact_number:varchar(20),null"/>
+<node CREATED="1570692062098" ID="ID_174815139" MODIFIED="1570692091759" TEXT="is_staff:boolean,default false"/>
+<node CREATED="1570692095938" ID="ID_457318275" MODIFIED="1570692130563" TEXT="date_joined:datetime,default now"/>
+<node CREATED="1563183890066" ID="ID_800197310" MODIFIED="1570709385793" TEXT="_favourite_projects: text"/>
+<node CREATED="1563183890066" ID="ID_1474521474" MODIFIED="1572428208009" TEXT="_favourite_boards: text"/>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1561978236215" FOLDED="true" HGAP="30" ID="ID_1334701898" MODIFIED="1574773273715" POSITION="left" TEXT="core_project_type" VSHIFT="-7">
+<node CREATED="1561977635551" ID="ID_1809588767" MODIFIED="1562060138452" TEXT="id: int, ai, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1809588767" ENDARROW="Default" ENDINCLINATION="152;0;" ID="Arrow_ID_699242942" SOURCE="ID_1401956429" STARTARROW="None" STARTINCLINATION="152;0;"/>
+</node>
+<node CREATED="1561976624220" ID="ID_828346222" MODIFIED="1570709517489" TEXT="name: char(65), not null, unique"/>
+<node CREATED="1570692303169" ID="ID_573037454" MODIFIED="1570692433097" TEXT="created_by:fk(core_user)">
+<arrowlink COLOR="#000000" DESTINATION="ID_142170970" ENDARROW="Default" ENDINCLINATION="145;0;" ID="Arrow_ID_1875123173" STARTARROW="None" STARTINCLINATION="145;0;"/>
+</node>
+<node CREATED="1570692354674" ID="ID_229606821" MODIFIED="1570692494999" TEXT="created_at:datetime,now"/>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1561977247467" FOLDED="true" HGAP="27" ID="ID_681489233" MODIFIED="1574773273716" POSITION="left" TEXT="core_project" VSHIFT="-2">
+<node CREATED="1561977635551" ID="ID_100248007" MODIFIED="1562249000006" TEXT="id: int, ai, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_100248007" ENDARROW="Default" ENDINCLINATION="231;0;" ID="Arrow_ID_1309319379" SOURCE="ID_180003966" STARTARROW="None" STARTINCLINATION="231;0;"/>
+</node>
+<node CREATED="1561977660370" ID="ID_1798831338" MODIFIED="1561977669449" TEXT="name: varchar(128), not null"/>
+<node CREATED="1562060106100" ID="ID_1548430388" MODIFIED="1562060115330" TEXT="address: varchar(255), null"/>
+<node CREATED="1562060125062" ID="ID_1401956429" MODIFIED="1562060138455" TEXT="type: int, fk(project_type: int)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_1809588767" ENDARROW="Default" ENDINCLINATION="152;0;" ID="Arrow_ID_699242942" STARTARROW="None" STARTINCLINATION="152;0;"/>
+</node>
+<node CREATED="1562060164085" ID="ID_31823939" MODIFIED="1562060167971" TEXT="year: int, null"/>
+<node CREATED="1562060188402" ID="ID_981611814" MODIFIED="1562060210812" TEXT="cover_image: varchar(255), null"/>
+<node CREATED="1563183490179" ID="ID_1384168409" MODIFIED="1570710515963" TEXT="start_date: datetime, not null"/>
+<node CREATED="1563183531759" ID="ID_1154451127" MODIFIED="1570710515963" TEXT="estimated_completion_date: datetime. not null"/>
+<node CREATED="1563184488105" ID="ID_323227075" MODIFIED="1574770909421" TEXT="created_at: datetime,now">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Can't be edited once created
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1561975872358" FOLDED="true" HGAP="27" ID="ID_1112596042" MODIFIED="1574773273716" POSITION="left" TEXT="core_permission" VSHIFT="-4">
+<node CREATED="1561976077222" ID="ID_608789868" MODIFIED="1570692757180" TEXT="id: int, ai, pk"/>
+<node CREATED="1561976084193" ID="ID_372509780" MODIFIED="1561976094914" TEXT="name: varchar(48), not null, unique"/>
+<node CREATED="1562249716537" ID="ID_808099977" MODIFIED="1562249726325" TEXT="code: varchar(48), not null, unique"/>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1562248839561" FOLDED="true" HGAP="32" ID="ID_1975402683" MODIFIED="1574773273716" POSITION="left" TEXT="core_project_member" VSHIFT="-10">
+<node CREATED="1562249332696" ID="ID_1224365442" MODIFIED="1562249387725" TEXT="id: int, ai, pk, not null">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1224365442" ENDARROW="Default" ENDINCLINATION="243;0;" ID="Arrow_ID_81940154" SOURCE="ID_603384301" STARTARROW="None" STARTINCLINATION="243;0;"/>
+</node>
+<node CREATED="1562248988703" ID="ID_180003966" MODIFIED="1562249000007" TEXT="project: int, fk(project: id)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_100248007" ENDARROW="Default" ENDINCLINATION="231;0;" ID="Arrow_ID_1309319379" STARTARROW="None" STARTINCLINATION="231;0;"/>
+</node>
+<node CREATED="1562249003139" ID="ID_103388451" MODIFIED="1562249016352" TEXT="user: int, fk(user:id)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_142170970" ENDARROW="Default" ENDINCLINATION="436;0;" ID="Arrow_ID_366254211" STARTARROW="None" STARTINCLINATION="436;0;"/>
+</node>
+<node CREATED="1562249020686" ID="ID_1707460703" MODIFIED="1562249210443" TEXT="role: varchar(48), not null">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      e.g. Project Manager, Executive,
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1562249574801" ID="ID_1018747090" MODIFIED="1562249588995" TEXT="is_accepted: boolean, default false"/>
+<node CREATED="1562249594319" ID="ID_1115371237" MODIFIED="1562249602593" TEXT="invited_on: datetime, not null"/>
+<node CREATED="1572601943090" ID="ID_1031160988" MODIFIED="1574765893897" TEXT="is_admin: default False"/>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1562249297930" FOLDED="true" HGAP="32" ID="ID_1462827714" MODIFIED="1574773273717" POSITION="left" TEXT="core_project_member_permission_map" VSHIFT="-8">
+<node CREATED="1562249347427" ID="ID_697229979" MODIFIED="1562249357933" TEXT="permission: int, fk(permission_id: int)"/>
+<node CREATED="1562249361220" ID="ID_603384301" MODIFIED="1562249387725" TEXT="project: int, fk(project_member: int)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_1224365442" ENDARROW="Default" ENDINCLINATION="243;0;" ID="Arrow_ID_81940154" STARTARROW="None" STARTINCLINATION="243;0;"/>
+</node>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1561976329383" FOLDED="true" HGAP="29" ID="ID_1827498711" MODIFIED="1574773273717" POSITION="left" TEXT="core_token" VSHIFT="-10">
+<node CREATED="1561976339436" ID="ID_20560885" MODIFIED="1561976343878" TEXT="id: int, ai, pk"/>
+<node CREATED="1561976346505" ID="ID_209419398" MODIFIED="1561976358811" TEXT="token: varchar(64), not null, unique"/>
+<node CREATED="1561976374173" ID="ID_1186650393" MODIFIED="1561976382858" TEXT="created_at: datetime, not null"/>
+<node CREATED="1561976386678" ID="ID_1915627098" MODIFIED="1570692394903" TEXT="user: int, fk(user)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_142170970" ENDARROW="Default" ENDINCLINATION="332;0;" ID="Arrow_ID_1339776964" STARTARROW="None" STARTINCLINATION="332;0;"/>
+</node>
+<node CREATED="1561976429593" ID="ID_1895708436" MODIFIED="1561976479844" TEXT="action: char(8), not null">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      reset_password: reset_password
+    </p>
+    <p>
+      register: register
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1561976374173" ID="ID_600494190" MODIFIED="1570692807327" TEXT="expires_at: datetime, not null"/>
+</node>
+<node BACKGROUND_COLOR="#b6e771" CREATED="1570692835280" FOLDED="true" HGAP="32" ID="ID_886091713" MODIFIED="1574773273718" POSITION="left" TEXT="core_page" VSHIFT="-1">
+<node CREATED="1570692844634" ID="ID_955672867" MODIFIED="1570692863318" TEXT="name:char(100),unique,not null"/>
+<node CREATED="1570692865192" ID="ID_912956093" MODIFIED="1570692876190" TEXT="content:text,null"/>
+</node>
+<node BACKGROUND_COLOR="#82e57e" CREATED="1574772417495" FOLDED="true" ID="ID_1276753126" MODIFIED="1574773273718" POSITION="left" TEXT="core_country">
+<node CREATED="1574772449055" ID="ID_418774360" MODIFIED="1574772687500" TEXT="id : int, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_418774360" ENDARROW="Default" ENDINCLINATION="130;0;" ID="Arrow_ID_1423307890" SOURCE="ID_1652303459" STARTARROW="None" STARTINCLINATION="130;0;"/>
+</node>
+<node CREATED="1574772471919" ID="ID_1443579489" MODIFIED="1574772546156" TEXT="name : varchar(128), not null, unique"/>
+<node CREATED="1574772549157" ID="ID_1301534464" MODIFIED="1574772572878" TEXT="country_code : varchar(10)"/>
+</node>
+<node BACKGROUND_COLOR="#82e57e" CREATED="1574772431455" FOLDED="true" ID="ID_1016200834" MODIFIED="1574773273718" POSITION="left" TEXT="core_state">
+<node CREATED="1574772610748" ID="ID_1590790190" MODIFIED="1574772790437" TEXT="id : int, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1590790190" ENDARROW="Default" ENDINCLINATION="139;0;" ID="Arrow_ID_317298907" SOURCE="ID_1565795848" STARTARROW="None" STARTINCLINATION="139;0;"/>
+</node>
+<node CREATED="1574772626708" ID="ID_273167790" MODIFIED="1574772658989" TEXT="name : varchar(128), not null"/>
+<node CREATED="1574772666060" ID="ID_1652303459" MODIFIED="1574772687500" TEXT="country : int fk(country)">
+<arrowlink DESTINATION="ID_418774360" ENDARROW="Default" ENDINCLINATION="130;0;" ID="Arrow_ID_1423307890" STARTARROW="None" STARTINCLINATION="130;0;"/>
+</node>
+</node>
+<node BACKGROUND_COLOR="#82e57e" CREATED="1574772440087" FOLDED="true" ID="ID_918870856" MODIFIED="1574773273719" POSITION="left" TEXT="core_city">
+<node CREATED="1574772440087" ID="ID_1006540978" MODIFIED="1574772722986" TEXT="id : int, pk"/>
+<node CREATED="1574772626708" ID="ID_113579036" MODIFIED="1574772658989" TEXT="name : varchar(128), not null"/>
+<node CREATED="1574772743939" ID="ID_814108455" MODIFIED="1574772761983" TEXT="zip_code : int, null "/>
+<node CREATED="1574772768874" ID="ID_1565795848" MODIFIED="1574772790438" TEXT="state : int fk(state)">
+<arrowlink DESTINATION="ID_1590790190" ENDARROW="Default" ENDINCLINATION="139;0;" ID="Arrow_ID_317298907" STARTARROW="None" STARTINCLINATION="139;0;"/>
+</node>
+</node>
+<node BACKGROUND_COLOR="#c6741b" CREATED="1561976510488" FOLDED="true" HGAP="37" ID="ID_1886383612" MODIFIED="1574773273719" POSITION="left" TEXT="nt_notification_type" VSHIFT="17">
+<node CREATED="1561976610561" ID="ID_41122641" MODIFIED="1561976711910" TEXT="id: int, ai, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_41122641" ENDARROW="Default" ENDINCLINATION="115;0;" ID="Arrow_ID_974821881" SOURCE="ID_656061909" STARTARROW="None" STARTINCLINATION="115;0;"/>
+</node>
+<node CREATED="1561976624220" ID="ID_322949563" MODIFIED="1561976646321" TEXT="code: char(16), not null, unique">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      e.g. SMS, EMAIL
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node BACKGROUND_COLOR="#c6741b" CREATED="1561975839383" FOLDED="true" HGAP="28" ID="ID_458783062" MODIFIED="1574773273720" POSITION="left" TEXT="nt_notification_template" VSHIFT="-3">
+<node CREATED="1561976550943" ID="ID_1470822469" MODIFIED="1561976681008" TEXT="id: int, ai, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1470822469" ENDARROW="Default" ENDINCLINATION="167;0;" ID="Arrow_ID_1410850130" SOURCE="ID_1004531850" STARTARROW="None" STARTINCLINATION="167;0;"/>
+</node>
+<node CREATED="1561976563398" ID="ID_914468512" MODIFIED="1570691518050" TEXT="content: text field, not null"/>
+<node CREATED="1561976588444" ID="ID_1732465416" MODIFIED="1561976604466" TEXT="name: varchar(48), not null, unique"/>
+</node>
+<node BACKGROUND_COLOR="#c6741b" CREATED="1561976520359" FOLDED="true" HGAP="38" ID="ID_1334331949" MODIFIED="1574773273720" POSITION="left" TEXT="nt_notification" VSHIFT="1">
+<node CREATED="1561976654690" ID="ID_561897171" MODIFIED="1561976661312" TEXT="id: int, ai, pk"/>
+<node CREATED="1561976664531" ID="ID_1004531850" MODIFIED="1561976681008" TEXT="template: int, fk(notification_template)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_1470822469" ENDARROW="Default" ENDINCLINATION="167;0;" ID="Arrow_ID_1410850130" STARTARROW="None" STARTINCLINATION="167;0;"/>
+</node>
+<node CREATED="1561976694150" ID="ID_656061909" MODIFIED="1561976711911" TEXT="type: int, fk(notification_type)">
+<arrowlink COLOR="#b0b0b0" DESTINATION="ID_41122641" ENDARROW="Default" ENDINCLINATION="115;0;" ID="Arrow_ID_974821881" STARTARROW="None" STARTINCLINATION="115;0;"/>
+</node>
+<node CREATED="1561976724099" ID="ID_647290454" MODIFIED="1561976733907" TEXT="is_sent: boolean, default false"/>
+<node CREATED="1561976747924" ID="ID_585693766" MODIFIED="1561976759856" TEXT="send_at: datetime, not null, default now"/>
+<node CREATED="1561976763047" ID="ID_1756418569" MODIFIED="1570690836864" TEXT="receiver: varchar(48), not null">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      mobile number for sms type notification
+    </p>
+    <p>
+      email address for email type notification
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1561976865802" ID="ID_1247409957" MODIFIED="1570690854411" TEXT="context: textfield, not null">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Text to be substitited in template
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node CREATED="1562925696545" ID="ID_265878308" MODIFIED="1562925709845" TEXT="created_at: datetime, not null"/>
+</node>
+<node BACKGROUND_COLOR="#48d3be" CREATED="1561976978178" FOLDED="true" HGAP="36" ID="ID_703118703" MODIFIED="1574773273721" POSITION="right" TEXT="md_image" VSHIFT="-7">
+<node CREATED="1561976654690" ID="ID_1846964864" MODIFIED="1561976661312" TEXT="id: int, ai, pk"/>
+<node CREATED="1562925696545" ID="ID_1990348397" MODIFIED="1562925709845" TEXT="created_at: datetime, not null"/>
+<node CREATED="1562925713326" ID="ID_550793877" MODIFIED="1562925721033" TEXT="created_by: id, int, user"/>
+<node CREATED="1562925929155" ID="ID_663254306" MODIFIED="1562925938204" TEXT="file: fileField, not null"/>
+<node CREATED="1562925945872" ID="ID_1318175490" MODIFIED="1570690177980" TEXT="project_id: int, not null"/>
+</node>
+<node BACKGROUND_COLOR="#48d3be" CREATED="1561976978178" FOLDED="true" HGAP="36" ID="ID_1351244882" MODIFIED="1574773273721" POSITION="right" TEXT="md_video" VSHIFT="-6">
+<node CREATED="1561976654690" ID="ID_1758287629" MODIFIED="1561976661312" TEXT="id: int, ai, pk"/>
+<node CREATED="1562925696545" ID="ID_1182353867" MODIFIED="1562925709845" TEXT="created_at: datetime, not null"/>
+<node CREATED="1562925713326" ID="ID_230754302" MODIFIED="1562925721033" TEXT="created_by: id, int, user"/>
+<node CREATED="1562925929155" ID="ID_286632092" MODIFIED="1562925938204" TEXT="file: fileField, not null"/>
+<node CREATED="1562925945872" ID="ID_1483593187" MODIFIED="1570690200605" TEXT="project_id: int, not null"/>
+<node CREATED="1570690204657" ID="ID_1187710813" MODIFIED="1570690263370" TEXT="thumbnail:imageField,null"/>
+</node>
+<node BACKGROUND_COLOR="#48d3be" CREATED="1562925611758" FOLDED="true" HGAP="36" ID="ID_1930056598" MODIFIED="1574773273722" POSITION="right" TEXT="md_plan" VSHIFT="3">
+<node CREATED="1562925674799" ID="ID_395584258" MODIFIED="1562925679550" TEXT="id: int, ai, pk"/>
+<node CREATED="1562925682200" ID="ID_1773241966" MODIFIED="1562925692455" TEXT="name: varchar(64), not null, unique"/>
+<node CREATED="1562925696545" ID="ID_461193834" MODIFIED="1562925709845" TEXT="created_at: datetime, not null"/>
+<node CREATED="1562925713326" ID="ID_971039223" MODIFIED="1562925721033" TEXT="created_by: id, int, user"/>
+<node CREATED="1562925724240" ID="ID_391396616" MODIFIED="1562925742134" TEXT="notes: varchar(148), null"/>
+<node CREATED="1562925929155" ID="ID_668238824" MODIFIED="1562925938204" TEXT="file: fileField, not null"/>
+<node CREATED="1562925945872" ID="ID_36608368" MODIFIED="1570690386209" TEXT="project_id: int, not null"/>
+<node CREATED="1562926204754" ID="ID_1511471768" MODIFIED="1562926218788" TEXT="is_archived: boolean, default False"/>
+<node CREATED="1562927608695" ID="ID_629499156" MODIFIED="1562927615173" TEXT="archived_at: datetime"/>
+</node>
+<node BACKGROUND_COLOR="#48d3be" CREATED="1562925611758" FOLDED="true" HGAP="37" ID="ID_1013039886" MODIFIED="1574773273722" POSITION="right" TEXT="md_contract" VSHIFT="-19">
+<node CREATED="1562925674799" ID="ID_596654034" MODIFIED="1562925679550" TEXT="id: int, ai, pk"/>
+<node CREATED="1562925682200" ID="ID_297883255" MODIFIED="1562925692455" TEXT="name: varchar(64), not null, unique"/>
+<node CREATED="1562925696545" ID="ID_166536084" MODIFIED="1562925709845" TEXT="created_at: datetime, not null"/>
+<node CREATED="1562925713326" ID="ID_1510037427" MODIFIED="1562925721033" TEXT="created_by: id, int, user"/>
+<node CREATED="1562925724240" ID="ID_404274183" MODIFIED="1562925742134" TEXT="notes: varchar(148), null"/>
+<node CREATED="1562925929155" ID="ID_658521332" MODIFIED="1562925938204" TEXT="file: fileField, not null"/>
+<node CREATED="1562925945872" ID="ID_1206255753" MODIFIED="1570691436590" TEXT="project_id: int, not null"/>
+<node CREATED="1562926204754" ID="ID_1319555011" MODIFIED="1562926218788" TEXT="is_archived: boolean, default False"/>
+<node CREATED="1562927608695" ID="ID_287106276" MODIFIED="1562927615173" TEXT="archived_at: datetime"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697291598" FOLDED="true" HGAP="37" ID="ID_525892573" MODIFIED="1574773273723" POSITION="right" TEXT="bd_board">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique together (project_id, name)
+    </p>
+  </body>
+</html></richcontent>
+<node CREATED="1570698590477" ID="ID_1099888184" MODIFIED="1570698602646" TEXT="id : int, pk">
+<linktarget COLOR="#000000" DESTINATION="ID_1099888184" ENDARROW="Default" ENDINCLINATION="456;0;" ID="Arrow_ID_644130569" SOURCE="ID_90975595" STARTARROW="None" STARTINCLINATION="456;0;"/>
+<linktarget COLOR="#000000" DESTINATION="ID_1099888184" ENDARROW="Default" ENDINCLINATION="301;0;" ID="Arrow_ID_1885202367" SOURCE="ID_1630142264" STARTARROW="None" STARTINCLINATION="301;0;"/>
+</node>
+<node CREATED="1570698643861" ID="ID_1921593885" MODIFIED="1570704725149" TEXT="name: varchar(128), not null"/>
+<node CREATED="1570698673949" ID="ID_962096148" MODIFIED="1570713012826" TEXT="project_id: int, not null"/>
+<node CREATED="1570698708013" ID="ID_1597907592" MODIFIED="1574765885429" TEXT="display_color : varchar(48), not null"/>
+<node CREATED="1570698766180" ID="ID_325872159" MODIFIED="1570713037393" TEXT="created_at : datetime, not null"/>
+<node CREATED="1570698815348" ID="ID_417006558" MODIFIED="1570704699494" TEXT="created_by : int, not null"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697349509" FOLDED="true" HGAP="34" ID="ID_1652026767" MODIFIED="1574773273724" POSITION="right" TEXT="bd_stage" VSHIFT="2">
+<node CREATED="1570700101303" ID="ID_1700273190" MODIFIED="1574765862034" TEXT="id : int, pk">
+<linktarget COLOR="#000000" DESTINATION="ID_1700273190" ENDARROW="Default" ENDINCLINATION="256;0;" ID="Arrow_ID_470517257" SOURCE="ID_1973061138" STARTARROW="None" STARTINCLINATION="256;0;"/>
+</node>
+<node CREATED="1570704759796" ID="ID_1660121277" MODIFIED="1570704850436" TEXT="name : varchar(48), not null, unique"/>
+<node CREATED="1570704780420" ID="ID_1397687285" MODIFIED="1570704858995" TEXT="created_at : datetime, not null"/>
+<node CREATED="1570704828004" ID="ID_152700183" MODIFIED="1570704861366" TEXT="is_default_stage: boolean, default false"/>
+<node CREATED="1570776774009" ID="ID_1749831392" MODIFIED="1574765850662" TEXT="default_position: int, null"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697490394" FOLDED="true" HGAP="30" ID="ID_722545726" MODIFIED="1574773273724" POSITION="right" TEXT="bd_board_stage_map" VSHIFT="-2">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (board, stage, position)
+    </p>
+  </body>
+</html></richcontent>
+<node CREATED="1570700177086" ID="ID_531635415" MODIFIED="1570700186582" TEXT="id : int, pk">
+<linktarget COLOR="#000000" DESTINATION="ID_531635415" ENDARROW="Default" ENDINCLINATION="292;0;" ID="Arrow_ID_1756902858" SOURCE="ID_743776075" STARTARROW="None" STARTINCLINATION="292;0;"/>
+</node>
+<node CREATED="1570700217574" ID="ID_90975595" MODIFIED="1570705153608" TEXT="board : int fk(bd_board:id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_1099888184" ENDARROW="Default" ENDINCLINATION="456;0;" ID="Arrow_ID_644130569" STARTARROW="None" STARTINCLINATION="456;0;"/>
+</node>
+<node CREATED="1570700241094" ID="ID_1973061138" MODIFIED="1574765862034" TEXT="stage: int fk(bd_stage :id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_1700273190" ENDARROW="Default" ENDINCLINATION="256;0;" ID="Arrow_ID_470517257" STARTARROW="None" STARTINCLINATION="256;0;"/>
+</node>
+<node CREATED="1570705001259" ID="ID_1531358970" MODIFIED="1570705090149" TEXT="position : int, not null default=0"/>
+<node CREATED="1570705039808" ID="ID_151679490" MODIFIED="1570705078349" TEXT="is_archived : boolean, default false"/>
+<node CREATED="1570704780420" ID="ID_321514855" MODIFIED="1574765856038" TEXT="created_at : datetime, not null"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697453875" FOLDED="true" HGAP="32" ID="ID_1881365513" MODIFIED="1574773273725" POSITION="right" TEXT="bd_board_member" VSHIFT="-2">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (board, user_id)
+    </p>
+  </body>
+</html></richcontent>
+<node CREATED="1570699243144" ID="ID_1956474291" MODIFIED="1570704457033" TEXT="id : int, pk"/>
+<node CREATED="1570699276017" ID="ID_1630142264" MODIFIED="1570699571152" TEXT="board : int fk(bd_board:id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_1099888184" ENDARROW="Default" ENDINCLINATION="301;0;" ID="Arrow_ID_1885202367" STARTARROW="None" STARTINCLINATION="301;0;"/>
+</node>
+<node CREATED="1570699415057" ID="ID_670179374" MODIFIED="1570704545463" TEXT="user_id : int, not null"/>
+<node CREATED="1570700120279" ID="ID_1844338852" MODIFIED="1570704549983" TEXT="created_at : datetime, not null"/>
+<node CREATED="1574768418469" ID="ID_1580602222" MODIFIED="1574768447471" TEXT="created_by : int, not null"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697519970" FOLDED="true" HGAP="29" ID="ID_239359102" MODIFIED="1574773273725" POSITION="right" TEXT="bd_label" VSHIFT="-2">
+<node CREATED="1570700377055" ID="ID_916802049" MODIFIED="1570700412021" TEXT="id : int, pk"/>
+<node CREATED="1570700419933" ID="ID_1631258016" MODIFIED="1574765911185" TEXT="name : varchar (48) not null, unique"/>
+<node CREATED="1570700494956" ID="ID_843673608" MODIFIED="1574765922662" TEXT="color_code : varchar (48) not null, unique"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697519970" FOLDED="true" HGAP="29" ID="ID_1809231781" MODIFIED="1574773273726" POSITION="right" TEXT="bd_category" VSHIFT="-2">
+<node CREATED="1570700377055" ID="ID_1802450820" MODIFIED="1570778556786" TEXT="id : int, pk">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1802450820" ENDARROW="Default" ENDINCLINATION="327;0;" ID="Arrow_ID_296349886" SOURCE="ID_313172982" STARTARROW="None" STARTINCLINATION="327;0;"/>
+</node>
+<node CREATED="1570700419933" ID="ID_1186058562" MODIFIED="1570778225946" TEXT="name : varchar (48) not null, unique"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697536188" FOLDED="true" HGAP="29" ID="ID_885225821" MODIFIED="1574775219727" POSITION="right" TEXT="bd_task" VSHIFT="-1">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (title, board_stage)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1570700559516" ID="ID_527197725" MODIFIED="1574769308230" TEXT="id : int, pk">
+<linktarget COLOR="#000000" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="335;0;" ID="Arrow_ID_1187421818" SOURCE="ID_1765203768" STARTARROW="None" STARTINCLINATION="335;0;"/>
+<linktarget COLOR="#000000" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="523;0;" ID="Arrow_ID_1331869529" SOURCE="ID_1186365881" STARTARROW="None" STARTINCLINATION="523;0;"/>
+<linktarget COLOR="#000000" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="360;0;" ID="Arrow_ID_944808480" SOURCE="ID_1506527041" STARTARROW="None" STARTINCLINATION="360;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="912;0;" ID="Arrow_ID_803244105" SOURCE="ID_1919320429" STARTARROW="None" STARTINCLINATION="912;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="912;0;" ID="Arrow_ID_830405174" SOURCE="ID_214327573" STARTARROW="None" STARTINCLINATION="912;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="912;0;" ID="Arrow_ID_488142450" SOURCE="ID_28817845" STARTARROW="None" STARTINCLINATION="912;0;"/>
+</node>
+<node CREATED="1570700579687" ID="ID_1895215088" MODIFIED="1570700617475" TEXT="title : varchar(128), not null"/>
+<node CREATED="1570700649699" ID="ID_1452607858" MODIFIED="1570700670483" TEXT="created_at : datetime, not null"/>
+<node CREATED="1570700681315" ID="ID_868350299" MODIFIED="1570700708949" TEXT="created_by : int, not null"/>
+<node CREATED="1570700716284" ID="ID_308715797" MODIFIED="1570700772074" TEXT="description : varchar(200)"/>
+<node CREATED="1570700798018" ID="ID_1670952438" MODIFIED="1570700826611" TEXT="is_archived : boolean, default false"/>
+<node CREATED="1570700852002" ID="ID_743776075" MODIFIED="1574765926225" TEXT="board_stage : int fk(bd_stage_map : id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_531635415" ENDARROW="Default" ENDINCLINATION="292;0;" ID="Arrow_ID_1756902858" STARTARROW="None" STARTINCLINATION="292;0;"/>
+</node>
+<node CREATED="1570700954857" ID="ID_334014450" MODIFIED="1570700974465" TEXT="display_in_gantt_chart : boolean, default false"/>
+<node CREATED="1570700954857" ID="ID_1451741229" MODIFIED="1574773267369" TEXT="display_in_board : boolean, default false"/>
+<node CREATED="1574766168270" ID="ID_617102151" MODIFIED="1574773270199" TEXT="parent_task_id: int, null"/>
+<node CREATED="1570701004041" ID="ID_249252697" MODIFIED="1570701036361" TEXT="start_date : date, null"/>
+<node CREATED="1570701046313" ID="ID_700477756" MODIFIED="1570701059120" TEXT="end_date : date, null"/>
+<node CREATED="1570701081408" ID="ID_941347786" MODIFIED="1570701312231" TEXT="is_key_task : boolean , default false"/>
+<node CREATED="1570701117088" ID="ID_1040292028" MODIFIED="1570701160064" TEXT="position : int, not null, default =0"/>
+<node CREATED="1570778244309" ID="ID_313172982" MODIFIED="1570778265056" TEXT="category: int fk(category: id)">
+<arrowlink DESTINATION="ID_1802450820" ENDARROW="Default" ENDINCLINATION="327;0;" ID="Arrow_ID_296349886" STARTARROW="None" STARTINCLINATION="327;0;"/>
+</node>
+<node CREATED="1574768653679" ID="ID_1226363298" MODIFIED="1574768687667" TEXT="share_key : varchar(16), null, unique"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697562897" FOLDED="true" HGAP="29" ID="ID_1594595115" MODIFIED="1574775187995" POSITION="right" TEXT="bd_task_member">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (user_id, task)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node CREATED="1570701241248" ID="ID_580301462" MODIFIED="1570701399383" TEXT="id : int, pk"/>
+<node CREATED="1570701326847" ID="ID_1678708168" MODIFIED="1574765931826" TEXT="user_id : int, not null"/>
+<node CREATED="1570701417367" ID="ID_1765203768" MODIFIED="1574769308230" TEXT="task : int fk ( bd_task : id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="335;0;" ID="Arrow_ID_1187421818" STARTARROW="None" STARTINCLINATION="335;0;"/>
+</node>
+<node CREATED="1570701490080" ID="ID_1725106709" MODIFIED="1570701571406" TEXT="created_at : date ,not null, auto_add_now"/>
+<node CREATED="1570701598744" ID="ID_1240935991" MODIFIED="1570701618886" TEXT="created_by : int , not null"/>
+</node>
+<node BACKGROUND_COLOR="#d1a5df" CREATED="1570697614313" FOLDED="true" HGAP="28" ID="ID_1519984006" MODIFIED="1574773273727" POSITION="right" TEXT="bd_attachment">
+<node CREATED="1570701959700" ID="ID_1614331691" MODIFIED="1570702036364" TEXT="id : int, pk"/>
+<node CREATED="1570702044397" ID="ID_488028229" MODIFIED="1574765935391" TEXT="created_at : datetime , not null , auto now"/>
+<node CREATED="1570702097612" ID="ID_587124731" MODIFIED="1570702111811" TEXT="attached_by : int, not null"/>
+<node CREATED="1570702144755" ID="ID_823663235" MODIFIED="1574765938298" TEXT="attachment: FileField, allowed_extensions[.pdf, .doc]"/>
+<node CREATED="1570702202811" ID="ID_1186365881" MODIFIED="1570702222923" TEXT="task : int fk (bd_task : id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="523;0;" ID="Arrow_ID_1331869529" STARTARROW="None" STARTINCLINATION="523;0;"/>
+</node>
+<node CREATED="1570778669254" ID="ID_587788031" MODIFIED="1570778731979" TEXT="name: varchar(48), not null">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (name, task)
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node BACKGROUND_COLOR="#db79e4" CREATED="1570697630884" FOLDED="true" HGAP="26" ID="ID_1384303197" MODIFIED="1574773732305" POSITION="right" TEXT="bd_check_list" VSHIFT="-1">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (task, name)
+    </p>
+  </body>
+</html></richcontent>
+<node CREATED="1570702306419" ID="ID_636147587" MODIFIED="1570702369618" TEXT="id : int, pk">
+<linktarget COLOR="#000000" DESTINATION="ID_636147587" ENDARROW="Default" ENDINCLINATION="226;0;" ID="Arrow_ID_968563157" SOURCE="ID_931020220" STARTARROW="None" STARTINCLINATION="226;0;"/>
+</node>
+<node CREATED="1570702393097" ID="ID_1506527041" MODIFIED="1570702419778" TEXT="task : int fk (bd_task : id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="360;0;" ID="Arrow_ID_944808480" STARTARROW="None" STARTINCLINATION="360;0;"/>
+</node>
+<node CREATED="1570702449138" ID="ID_199342002" MODIFIED="1570702479449" TEXT="name : varchar (48) , not null"/>
+</node>
+<node BACKGROUND_COLOR="#db79e4" CREATED="1570697665470" FOLDED="true" HGAP="26" ID="ID_656443978" MODIFIED="1574773732306" POSITION="right" TEXT="bd_check_list_item" VSHIFT="-2">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      unique_together (name, check_list)
+    </p>
+  </body>
+</html></richcontent>
+<node CREATED="1570702542217" ID="ID_948541648" MODIFIED="1570702554897" TEXT="id : int, pk"/>
+<node CREATED="1570702569297" ID="ID_1272876025" MODIFIED="1570702573449" TEXT="name : varchar (48) , not null"/>
+<node CREATED="1570702600409" ID="ID_931020220" MODIFIED="1574768749200" TEXT="checklist : int fk (bd_check_list : id)">
+<arrowlink COLOR="#000000" DESTINATION="ID_636147587" ENDARROW="Default" ENDINCLINATION="226;0;" ID="Arrow_ID_968563157" STARTARROW="None" STARTINCLINATION="226;0;"/>
+</node>
+<node CREATED="1570702722912" ID="ID_210854587" MODIFIED="1574765944152" TEXT="is_completed : boolean , default false"/>
+<node CREATED="1570702772649" ID="ID_496055768" MODIFIED="1574765944151" TEXT="completed_by : int null"/>
+<node CREATED="1570702807953" ID="ID_379641904" MODIFIED="1574765944151" TEXT="completed_at : datetime, null"/>
+</node>
+<node BACKGROUND_COLOR="#859903" CREATED="1563510007568" FOLDED="true" HGAP="47" ID="ID_857130203" MODIFIED="1574773273729" POSITION="left" TEXT="pc_area" VSHIFT="13">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      e.g. Kitchen
+    </p>
+  </body>
+</html></richcontent>
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1563515335415" ID="ID_768435921" MODIFIED="1570779830222" TEXT="id: int, ai, pk, not null">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_768435921" ENDARROW="Default" ENDINCLINATION="235;0;" ID="Arrow_ID_1403917023" SOURCE="ID_1211712113" STARTARROW="None" STARTINCLINATION="235;0;"/>
+</node>
+<node CREATED="1563510056177" ID="ID_1298094224" MODIFIED="1570780007114" TEXT="name: varchar(128), not null, unique"/>
+<node CREATED="1574770483050" ID="ID_524121511" MODIFIED="1574770501813" TEXT="created_at : date"/>
+<node CREATED="1574770505153" ID="ID_1031254557" MODIFIED="1574770514179" TEXT="created_by : int"/>
+</node>
+<node BACKGROUND_COLOR="#859903" CREATED="1563510050794" FOLDED="true" HGAP="47" ID="ID_391560657" MODIFIED="1574773273729" POSITION="left" TEXT="pc_category" VSHIFT="-4">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      e.g. Electronics
+    </p>
+  </body>
+</html></richcontent>
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1563515340887" ID="ID_1153135767" MODIFIED="1570779993114" TEXT="id: int, ai, pk, not null">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1153135767" ENDARROW="Default" ENDINCLINATION="147;0;" ID="Arrow_ID_425332445" SOURCE="ID_780220682" STARTARROW="None" STARTINCLINATION="147;0;"/>
+</node>
+<node CREATED="1563510651195" ID="ID_50082361" MODIFIED="1570780016449" TEXT="name: varchar(128), not null, unique"/>
+<node CREATED="1574770529657" ID="ID_199997442" MODIFIED="1574770539074" TEXT="created_at : date"/>
+<node CREATED="1574770541728" ID="ID_282911694" MODIFIED="1574770552786" TEXT="created_by : int"/>
+</node>
+<node BACKGROUND_COLOR="#859903" CREATED="1563510020736" FOLDED="true" HGAP="47" ID="ID_1547243713" MODIFIED="1574773273730" POSITION="left" TEXT="pc_product" VSHIFT="-5">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1563515351736" ID="ID_1666997686" MODIFIED="1570781487157" TEXT="id: int, pk, not null">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1666997686" ENDARROW="Default" ENDINCLINATION="831;0;" ID="Arrow_ID_447197020" SOURCE="ID_1963779525" STARTARROW="None" STARTINCLINATION="831;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1666997686" ENDARROW="Default" ENDINCLINATION="831;0;" ID="Arrow_ID_942539607" SOURCE="ID_61125200" STARTARROW="None" STARTINCLINATION="831;0;"/>
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_1666997686" ENDARROW="Default" ENDINCLINATION="672;0;" ID="Arrow_ID_420915292" SOURCE="ID_731208845" STARTARROW="None" STARTINCLINATION="672;0;"/>
+</node>
+<node CREATED="1566474875089" ID="ID_1053924573" MODIFIED="1570780183516" TEXT="project_id:int,not_null"/>
+<node CREATED="1563514205165" ID="ID_780220682" MODIFIED="1570780331012" TEXT="category_id:int, fk(category:id)">
+<arrowlink DESTINATION="ID_1153135767" ENDARROW="Default" ENDINCLINATION="147;0;" ID="Arrow_ID_425332445" STARTARROW="None" STARTINCLINATION="147;0;"/>
+</node>
+<node CREATED="1563514174725" ID="ID_1211712113" MODIFIED="1570780331012" TEXT="area_id:int, fk(area:id)">
+<arrowlink DESTINATION="ID_768435921" ENDARROW="Default" ENDINCLINATION="235;0;" ID="Arrow_ID_1403917023" STARTARROW="None" STARTINCLINATION="235;0;"/>
+</node>
+<node CREATED="1563512315740" ID="ID_1321655307" MODIFIED="1570780143641" TEXT="name: varchar(128), not null"/>
+<node CREATED="1563512384590" ID="ID_849743300" MODIFIED="1563512420105" TEXT="description: varchar(148)"/>
+<node CREATED="1563514208978" ID="ID_356949667" MODIFIED="1570780318341" TEXT="quantity:int,not_null"/>
+<node CREATED="1570780210772" ID="ID_990255365" MODIFIED="1570780292522" TEXT="is_purchased: boolean, default False"/>
+<node CREATED="1563514228850" ID="ID_1334253514" MODIFIED="1570780411914" TEXT="purchase_order_date:datetime, null"/>
+<node CREATED="1563514228850" ID="ID_1495659506" MODIFIED="1570780440614" TEXT="estimated_arrival_date:datetime, null"/>
+<node CREATED="1563514223786" ID="ID_140096962" MODIFIED="1570780767103" TEXT="is_approved_by_pm:boolean, default false"/>
+<node CREATED="1563514236130" ID="ID_1014241764" MODIFIED="1563514672051" TEXT="created_by:id,int,not_null"/>
+<node CREATED="1563514237594" ID="ID_1244464387" MODIFIED="1563514684850" TEXT="updated_by:id,int,not_null"/>
+<node CREATED="1574770583991" ID="ID_764954564" MODIFIED="1574770643025" TEXT="cover_image : image, not null"/>
+</node>
+<node BACKGROUND_COLOR="#859903" CREATED="1570697448692" FOLDED="true" HGAP="56" ID="ID_907273915" MODIFIED="1574773273730" POSITION="left" TEXT="pc_document" VSHIFT="-2">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1570700448243" ID="ID_1326261453" MODIFIED="1570780927657" TEXT="id:int,pk,not_null "/>
+<node CREATED="1570697479795" ID="ID_1963779525" MODIFIED="1570781058538" TEXT="product_id : int,  not null">
+<arrowlink DESTINATION="ID_1666997686" ENDARROW="Default" ENDINCLINATION="831;0;" ID="Arrow_ID_447197020" STARTARROW="None" STARTINCLINATION="831;0;"/>
+</node>
+<node CREATED="1570697477403" ID="ID_3178192" MODIFIED="1570781043436" TEXT="name : varchar(128), not null"/>
+<node CREATED="1570697482043" ID="ID_1492355909" MODIFIED="1570781099552" TEXT="created_by : int, not null"/>
+<node CREATED="1570697484179" ID="ID_1338184402" MODIFIED="1570781111957" TEXT="created_at : datetime. not null"/>
+<node CREATED="1570697484179" ID="ID_16656831" MODIFIED="1570781336751" TEXT="updated_at : datetime. null"/>
+<node CREATED="1570697482043" ID="ID_854812144" MODIFIED="1570781334704" TEXT="updated_by : int, null"/>
+<node CREATED="1574770672390" ID="ID_1891857663" MODIFIED="1574770683799" TEXT="file : file, not null"/>
+</node>
+<node BACKGROUND_COLOR="#859903" CREATED="1570697448692" FOLDED="true" HGAP="56" ID="ID_1451123116" MODIFIED="1574773273730" POSITION="left" TEXT="pc_image" VSHIFT="-2">
+<font NAME="SansSerif" SIZE="12"/>
+<node CREATED="1570700448243" ID="ID_127759160" MODIFIED="1570780927657" TEXT="id:int,pk,not_null "/>
+<node CREATED="1570697479795" ID="ID_61125200" MODIFIED="1570781058538" TEXT="product_id : int,  not null">
+<arrowlink DESTINATION="ID_1666997686" ENDARROW="Default" ENDINCLINATION="831;0;" ID="Arrow_ID_942539607" STARTARROW="None" STARTINCLINATION="831;0;"/>
+</node>
+<node CREATED="1570697477403" ID="ID_1087991695" MODIFIED="1570781213388" TEXT="file :filefield, not null"/>
+<node CREATED="1570697482043" ID="ID_358136445" MODIFIED="1570781099552" TEXT="created_by : int, not null"/>
+<node CREATED="1570697484179" ID="ID_1010171204" MODIFIED="1570781111957" TEXT="created_at : datetime. not null"/>
+</node>
+<node BACKGROUND_COLOR="#859903" CREATED="1570698501391" FOLDED="true" HGAP="54" ID="ID_1346445661" MODIFIED="1574773273731" POSITION="left" TEXT="pc_activity" VSHIFT="-966">
+<node CREATED="1570703170893" ID="ID_1725524801" MODIFIED="1570703185005" TEXT="id : int, pk"/>
+<node CREATED="1570703203445" ID="ID_820218710" MODIFIED="1570781463984" TEXT="content: Textfield , not null"/>
+<node CREATED="1570703269437" ID="ID_1258475477" MODIFIED="1570703293091" TEXT="created_at : datetime, not null, auto_add_now"/>
+<node CREATED="1570703364538" ID="ID_1441211825" MODIFIED="1570703411183" TEXT="created_by : int, not null"/>
+<node CREATED="1570703540372" ID="ID_731208845" MODIFIED="1570781487158" TEXT="product : int fk ( product : id)">
+<arrowlink DESTINATION="ID_1666997686" ENDARROW="Default" ENDINCLINATION="672;0;" ID="Arrow_ID_420915292" STARTARROW="None" STARTINCLINATION="672;0;"/>
+</node>
+</node>
+<node BACKGROUND_COLOR="#db79e4" CREATED="1574768780787" FOLDED="true" HGAP="28" ID="ID_1182968203" MODIFIED="1574773744201" POSITION="right" STYLE="fork" TEXT="bd_activity" VSHIFT="-4">
+<node CREATED="1574768811604" ID="ID_206375853" MODIFIED="1574769207784" TEXT="id : int, pk ">
+<linktarget COLOR="#b0b0b0" DESTINATION="ID_206375853" ENDARROW="Default" ENDINCLINATION="215;0;" ID="Arrow_ID_959921005" SOURCE="ID_1015234559" STARTARROW="None" STARTINCLINATION="215;0;"/>
+</node>
+<node CREATED="1574768834276" ID="ID_961062002" MODIFIED="1574768850030" TEXT="content : text(200)"/>
+<node CREATED="1574768853939" ID="ID_1665277412" MODIFIED="1574768882584" TEXT="created_at : date, auto_now_add"/>
+<node CREATED="1574768885202" ID="ID_508350867" MODIFIED="1574768903389" TEXT="last_updated_at : date, auto_now"/>
+<node CREATED="1574768906577" ID="ID_1833044188" MODIFIED="1574768929393" TEXT="created_by : int"/>
+<node CREATED="1574768935160" ID="ID_1919320429" MODIFIED="1574769299641" TEXT="task : int fk (bd_task : id)">
+<arrowlink DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="912;0;" ID="Arrow_ID_803244105" STARTARROW="None" STARTINCLINATION="912;0;"/>
+</node>
+<node CREATED="1574768965095" ID="ID_1015234559" MODIFIED="1574773466374" TEXT="parent_activity : int fk (bd_activity : id)">
+<arrowlink DESTINATION="ID_206375853" ENDARROW="Default" ENDINCLINATION="215;0;" ID="Arrow_ID_959921005" STARTARROW="None" STARTINCLINATION="215;0;"/>
+</node>
+</node>
+<node BACKGROUND_COLOR="#db79e4" CREATED="1574773310976" HGAP="21" ID="ID_892845617" MODIFIED="1574775158160" POSITION="right" TEXT="bd_task_dependency" VSHIFT="-2">
+<node CREATED="1574768811604" ID="ID_1699783106" MODIFIED="1574773466374" TEXT="id : int, pk "/>
+<node CREATED="1574768935160" ID="ID_214327573" MODIFIED="1574773473848" TEXT="source : int fk (bd_task : id)">
+<arrowlink DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="912;0;" ID="Arrow_ID_830405174" STARTARROW="None" STARTINCLINATION="912;0;"/>
+</node>
+<node CREATED="1574768935160" ID="ID_28817845" MODIFIED="1574773543981" TEXT="target : int fk (bd_task : id)">
+<arrowlink DESTINATION="ID_527197725" ENDARROW="Default" ENDINCLINATION="912;0;" ID="Arrow_ID_488142450" STARTARROW="None" STARTINCLINATION="912;0;"/>
+</node>
+<node CREATED="1574773503408" ID="ID_1078197762" MODIFIED="1574773625942" TEXT="type: varchar(2), not null">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Choice field
+    </p>
+    <p>
+      <font color="rgb(34, 34, 34)" face="arial, sans-serif">((finish-to-start, 0), (finish-to-finish, 1), (start-to-start, 2), (start-to-finish, 3)</font>)
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+</map>

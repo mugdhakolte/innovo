@@ -1,0 +1,30 @@
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.py[cod]
+backups/
+data/
+.env
+db.sqlite3
+**/migrations/
+
+#Python editor
+.vscode/
+.idea/
+
+### Django ###
+*.log
+media/
+
+# Distribution / packaging
+.Python
+env/
+venv/
+
+
+
+
+
+
+

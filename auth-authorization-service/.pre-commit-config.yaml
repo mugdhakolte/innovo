@@ -1,0 +1,262 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+    -   id: trailing-whitespace
+        name: Trailing Whitespace
+        description: Trims trailing whitespace.
+        args: [--markdown-linebreak-ext=md]
+
+    -   id: end-of-file-fixer
+        name: End of File Fixer
+        description: Makes sure files end in a newline and only a newline.
+
+    -   id: check-added-large-files
+        name: Check for added large files
+        description: Prevent giant files from being committed
+
+    -   id: check-docstring-first
+        name: Check docstring is first
+        description: Checks a common error of defining a docstring after code.
+
+    -   id: check-json
+        name: Check JSON
+        description: This hook checks json files for parseable syntax.
+
+    -   id: debug-statements
+        name: debug-statements
+        description: Check for debugger imports and py37+ breakpoint() calls in python source.
+
+    -   id: name-tests-test
+        name: name-tests-test
+        description: This verifies that test files are named correctly
+
+    -   id: requirements-txt-fixer
+        name: requirements-txt-fixer
+        description: Sorts entries in requirements.txt and removes incorrect entry for pkg-resources==0.0.0
+
+    -   id: check-ast
+        name: Check python ast
+        description: Simply check whether the files parse as valid python.
+
+    -   id: check-case-conflict
+        name: Check for case conflicts
+        description: Check for files that would conflict in case-insensitive filesystems
+
+    -   id: check-merge-conflict
+        name: Check for merge conflicts
+        description: Check for files that contain merge conflict strings.
+
+    -   id: check-yaml
+        name: check-yaml
+        description: Attempts to load all yaml files to verify syntax.
+
+    -   id: check-xml
+        name: check-xml
+        description: Attempts to load all xml files to verify syntax.
+
+    -   id: forbid-new-submodules
+        name: Forbid New Submodules
+        description: Prevent addition of new git submodules.
+
+    -   id: fix-encoding-pragma
+        name: Fix Encoding Pragma
+        description: Add # -*- coding: utf-8 -*- to the top of python files.
+
+    -   id: flake8
+        name: Flake 8
+        description: Run flake8 on your python files.
+
+    -   id: no-commit-to-branch
+        name: no-commit-to-branch
+        description: Protect specific branches from direct checkins.
+        args: [--branch, staging, --branch, master1]
+
+    -   id: pretty-format-json
+        name: Pretty format JSON
+        description: This hook sets a standard for formatting JSON files.
+        args: [--max-line-length=131]
+
+
+-   repo: https://github.com/pre-commit/mirrors-pylint
+    rev: 'master'
+    hooks:
+    -   id: pylint
+        name: pylint
+        description: Pylint is a Python static code analysis tool which looks for programming errors, helps enforcing a coding standard, sniffs for code smells and offers simple refactoring suggestions.
+
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: 'master'
+    hooks:
+    -   id: autopep8
+        name: autopep8
+        description: autopep8 automatically formats Python code to conform to the PEP 8 style guide.
+
+#-   repo: https://github.com/asottile/reorder_python_imports
+#    rev: v1.4.0
+#    hooks:
+#    -   id: reorder-python-imports
+#        name: reorder-python-imports
+#        description: automatically reordering python imports.
+
+#-   repo: https://github.com/asottile/add-trailing-comma
+#    rev: v1.0.0
+#    hooks:
+#    -   id: add-trailing-comma
+#        name: add-trailing-comma
+#        description: automatically add trailing commas to calls and literals.
+
+-   repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.1.6
+    hooks:
+    -   id: remove-tabs
+        description: Convert tabs to spaces
+        args: [ --whitespaces-count=4 ]
+
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.1.0
+    hooks:
+    -   id: python-safety-dependencies-check
+        name: python-safety-dependencies-check
+        description: Analyze your Python requirements for known security vulnerabilities
+        entry: safety
+        args: [check, --full-report]
+        language: system
+        files: requirements
+
+-   repo: https://github.com/jstewmon/check-swagger
+    rev: v0.1.4
+    hooks:
+    -   id: check-swagger
+        name: check-swagger
+        description: validate swagger specs
+
+-   repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.4.0
+    hooks:
+    -   id: python-use-type-annotations
+        description: Enforce that python3.6+ type annotations are used instead of type comments
+
+    -   id: python-check-blanket-noqa
+        description: Enforce that noqa annotations always occur with specific codes
+
+    -   id: python-check-mock-methods
+        description: Prevent common mistakes of assert mck.not_called(), assert mck.called_once_with(...) and mck.assert_called.
+
+    -   id: python-no-log-warn
+        description: A quick check for the deprecated .warn() method of python loggers.
+
+    -   id: rst-backticks
+        description: Detect common mistake of using single backticks when writing rst
+
+    -   id: python-no-eval
+        description: A quick check for the eval() built-in function
+
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v1.17.1
+    hooks:
+    -   id: pyupgrade
+        description: Automatically upgrade syntax for newer versions.
+
+-   repo: https://github.com/asottile/yesqa
+    rev: v0.0.11
+    hooks:
+    -   id: yesqa
+        description: automatically remove unnecessary # noqa comments
+#
+#-   repo: https://github.com/asottile/dead
+#    rev: v0.0.6
+#    hooks:
+#    -   id: dead
+#        description: dead simple python dead code detection
+
+-   repo: https://github.com/jumanjihouse/pre-commit-hooks
+    sha: 1.11.0
+    hooks:
+    -   id: script-must-have-extension
+        description: Non-executable shell script filename ends in .sh
+    -   id: shellcheck
+        description: Shell scripts conform to shellcheck
+
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-nodejs
+    sha: v1.1.0
+    hooks:
+    -   id: dockerfile_lint
+
+-   repo: https://github.com/awebdeveloper/pre-commit-prettier
+    sha: 'master'  # Use the sha or tag you want to point at
+    hooks:
+    -   id: prettier
+        description: Prettier is an opinionated code formatter for JavaScript · TypeScript · Flow · JSX · JSON · CSS · SCSS · Less · HTML · Vue · Angular · GraphQL · Markdown · YAML
+        args: [] #list of args like '--single-quote', '--jsx-bracket-same-line', '--print-width 120', '--no-bracket-spacing'
+        additional_dependencies: ['prettier@1.1.0']
+
+#-   repo: https://github.com/thlorenz/doctoc
+#    sha: 'master'  # substitute a tagged version
+#    hooks:
+#    -   id: doctoc
+#        description: Generates table of contents for markdown files inside local git repository.
+
+-   repo: https://github.com/jorisroovers/gitlint
+    rev: 'master'
+    hooks:
+    -   id: gitlint
+        description: checks your commit messages for style.
+
+-   repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+    rev: v0.1.0
+    hooks:
+    -   id: dockerfilelint
+        description: checking Dockerfiles for issues.
+        stages: [commit]
+
+-   repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+    sha: v1.0.0
+    hooks:
+    -   id: commitlint
+        stages: [commit-msg]
+
+-   repo: https://github.com/aws-cloudformation/cfn-python-lint
+    rev: v0.21.3  # The version of cfn-lint to use
+    hooks:
+    -   id: cfn-python-lint
+        files: path/to/cfn/dir/.*\.(json|yml|yaml)$
+
+#-   repo: https://github.com/PyCQA/bandit
+#    rev: 'master' # Update me!
+#    hooks:
+#    -   id: bandit
+#        description: Bandit is a tool designed to find common security issues in Python code
+
+-   repo: https://github.com/PyCQA/pydocstyle
+    rev: 'master' # Update me!
+    hooks:
+    -   id: pydocstyle
+        description: pydocstyle is a static analysis tool for checking compliance with Python docstring conventions.
+
+#-   repo: https://github.com/miki725/importanize/
+#    rev: 'master'
+#    hooks:
+#    -   id: importanize
+#        description: organizing Python imports using PEP8 or custom rules
+
+-   repo: https://github.com/motet-a/jinjalint
+    rev: 'master'  # select a tag / sha to point at
+    hooks:
+    -   id: jinjalint
+        description: checks the indentation and the correctness of Jinja-like/HTML templates
+
+-   repo:  https://github.com/milin/giticket
+    rev: '668a90f'
+    hooks:
+    -   id:  giticket
+        description: prepending ticket numbers to commit-msgs.
+        args: ['--regex=PROJ-[0-9]', '--format={ticket} {commit_msg}']  # Optional
+
+-   repo: https://github.com/peterdemin/pip-compile-multi
+    rev: v1.3.2
+    hooks:
+    -   id: pip-compile-multi-verify
+        description: Compile multiple requirements files to lock dependency versions
