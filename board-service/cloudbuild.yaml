@@ -1,0 +1,67 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ["build", "-t", "gcr.io/innovo-app/innovo_builder_microservice_board:latest", "."]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ["push", "gcr.io/innovo-app/innovo_builder_microservice_board:latest"]
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+    - 'replace'
+    - '-f'
+    - 'board-service-web-deployment.yaml'
+    - '-f'
+    - 'board-service-web-service.yaml'
+    - '--force'
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=innovo-builders-cluster'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+    - 'scale'
+    - 'deployment'
+    - 'nginx'
+    - '--replicas=0'
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=innovo-builders-cluster'
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+    - 'scale'
+    - 'deployment'
+    - 'nginx'
+    - '--replicas=1'
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=innovo-builders-cluster'
+- name: 'gcr.io/cloud-builders/gcloud-slim'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    # Initialize counter
+    count=0
+    number_keep_images=5
+    image='gcr.io/innovo-app/innovo_builder_microservice_board'
+    echo "Cleaning image ${image}"
+
+    # get sha of all images
+    image_digits=$(gcloud container images list-tags $image --limit=unlimited \
+            --sort-by=~TIMESTAMP \
+            --format='get(digest)')
+
+    echo "Keeping ${number_keep_images} recent images."
+
+    # loop over fetched images
+    for digit in ${image_digits[@]}; do
+        # check if counter is greater than no. of images to keep
+        if [ $count -ge $number_keep_images ]
+        then
+            # Remove tag forcefully and delete image quitely
+            (
+                set -x
+                gcloud container images delete -q --force-delete-tags "${image}@${digit}"
+            )
+            echo "Deleted image ${image}@${digit}."
+        fi
+        let count=count+1   # increment the counter
+    done
+

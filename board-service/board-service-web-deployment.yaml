@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose --file ../docker-compose.yaml convert
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: board-service-web
+  name: board-service-web
+spec:
+  selector:
+    matchLabels:
+      app: board-service-web
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: board-service-web
+        io.kompose.service: board-service-web
+    spec:
+      containers:
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        command: ["/cloud_sql_proxy",
+               "-instances=innovo-app:us-central1:innovo-builders-authorization=tcp:5432",
+               "-credential_file=/secrets/cloudsql/credentials.json"]
+        volumeMounts:
+            - name: my-secrets-volume
+              mountPath: /secrets/cloudsql
+              readOnly: true
+        resources: {}
+      - args:
+        - /bin/sh
+        - -c
+        - python3 /code/manage.py runserver 0.0.0.0:8000
+        image: gcr.io/innovo-app/innovo_builder_microservice_board:latest
+        name: board-service-web
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        resources: {}
+      restartPolicy: Always
+      volumes:
+        - name: my-secrets-volume
+          secret:
+            secretName: cloudsql-instance-credentials
+status: {}

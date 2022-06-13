@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  board-service-web:
+    build: .
+    image: gcr.io/innovo-app/innovo_builder_microservice_board:latest
+    command: /bin/sh -c "python3 /code/manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8003:8000
+    restart: always
