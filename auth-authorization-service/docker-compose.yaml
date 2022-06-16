@@ -7,10 +7,10 @@ services:
       IS_LOCAL: 0
       IS_STAGING: 0
       IS_PRODUCTION: 1
-      DB_NAME: innovo_builders_authorization
-      DB_USER: postgres
-      DB_PASS: hralE8xNal9BxLfP
-      DB_HOST: 34.66.141.123
+      DB_NAME: <DB_NAME>
+      DB_USER: <username>
+      DB_PASS: <pass>
+      DB_HOST: <host>
       DB_PORT: 5432
     image: gcr.io/innovo-app/innovo_builder_microservice_auth_authorization:latest
     command: /bin/sh -c "python3 /code/manage.py runserver 0.0.0.0:8000"
